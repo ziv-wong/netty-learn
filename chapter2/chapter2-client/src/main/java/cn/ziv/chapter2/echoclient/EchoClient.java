@@ -11,9 +11,9 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import java.net.InetSocketAddress;
 
 /**
- * 代码清单 2-4 客户端的主类
+ * echo客户端的主类
  *
- * @author <a href="mailto:norman.maurer@gmail.com">Norman Maurer</a>
+ * @author wengzezhan on 2020/5/26
  */
 public class EchoClient {
     private final String host;
@@ -24,8 +24,7 @@ public class EchoClient {
         this.port = port;
     }
 
-    public void start()
-            throws Exception {
+    public void start() throws Exception {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             //创建 Bootstrap
@@ -39,10 +38,8 @@ public class EchoClient {
                     //在创建Channel时，向 ChannelPipeline中添加一个 EchoClientHandler实例
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch)
-                                throws Exception {
-                            ch.pipeline().addLast(
-                                    new EchoClientHandler());
+                        public void initChannel(SocketChannel ch) {
+                            ch.pipeline().addLast(new EchoClientHandler());
                         }
                     });
             //连接到远程节点，阻塞等待直到连接完成

@@ -41,7 +41,6 @@ public class EchoServer {
                             //EchoServerHandler 被标注为@Shareable，所以我们可以总是使用同样的实例
                             //这里对于所有的客户端连接来说，都会使用同一个 EchoServerHandler，因为其被标注为@Sharable，
                             //这将在后面的章节中讲到。
-                            System.out.println(ch.remoteAddress());
                             ch.pipeline().addLast(serverHandler);
                         }
                     });
