@@ -5,9 +5,13 @@
 
 	<groupId>cn.ziv</groupId>
 	<artifactId>netty-learn</artifactId>
-	<version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>chapter2</module>
+    </modules>
 
-	<properties>
+    <properties>
 		<junit.version>4.12</junit.version>
 		<netty.version>4.1.49.Final</netty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
