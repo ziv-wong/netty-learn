@@ -3,7 +3,7 @@ package cn.ziv.chapter2.echoserver;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelHandler;
+import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
@@ -14,7 +14,7 @@ import io.netty.util.CharsetUtil;
  * @author wengzezhan on 2020/5/26
  */
 //标示一个ChannelHandler可以被多个 Channel 安全地共享
-@ChannelHandler.Sharable
+@Sharable
 public class EchoServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
