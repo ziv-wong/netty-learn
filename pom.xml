@@ -9,7 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>chapter2</module>
-    </modules>
+		<module>chapter4</module>
+	</modules>
 
     <properties>
 		<junit.version>4.12</junit.version>
